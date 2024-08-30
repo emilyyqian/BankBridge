@@ -1,10 +1,11 @@
 import HeaderBox from '@/components/HeaderBox'
-import RightSidebar from '@/components/RightSidebar';
-import TotalBalanceBox from '@/components/TotalBalanceBox';
+import RightSidebar from '@/components/RightSidebar'
+import TotalBalanceBox from '@/components/TotalBalanceBox'
+import { getLoggedInUser } from '@/lib/actions/user.actions'
 import React from 'react'
 
-const Dashboard = () => {
-  const loggedIn = { firstName: 'Emily', lastName: 'Qian', email: 'emilyqian05@gmail.com'};
+const Dashboard = async () => {
+  const loggedIn = await getLoggedInUser()
   return (
     <section className="dashboard">
         <div className="dashboard-content">
@@ -12,7 +13,7 @@ const Dashboard = () => {
                 <HeaderBox
                   type="greeting"
                   title="Welcome,"
-                  user={loggedIn?.firstName || 'Guest' }
+                  user={loggedIn?.name || 'Guest' }
                   subtext="Access and manage your accounts and transactions efficiently."
                 />
                 <TotalBalanceBox
