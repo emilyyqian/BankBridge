@@ -82,7 +82,7 @@ const AuthForm = ({ type }: { type: string }) => {
     }
     
   return (
-    <section className="auth-form font-arimo">
+    <section className="auth-form font-rubik">
       <header className="flex flex-col gap-5 md:gap-8">
         <Link href="/" className="cursor-pointer flex items-center gap-1">
           <Image 

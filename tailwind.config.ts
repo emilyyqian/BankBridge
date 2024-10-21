@@ -1,3 +1,4 @@
+import { Libre_Caslon_Text } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config = {
@@ -84,7 +85,7 @@ const config = {
         creditCard: "8px 10px 16px 0px rgba(0, 0, 0, 0.05)",
       },
       fontFamily: {
-        arimo: "var(--font-arimo)",
+        "rubik": "var(--font-rubik)",
         "libre-caslon-text": "var(--font-libre-caslon-text)",
       },
       keyframes: {

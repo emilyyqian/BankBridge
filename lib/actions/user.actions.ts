@@ -140,7 +140,7 @@ export const createLinkToken = async (user: User) => {
         client_user_id: user.$id
       },
       client_name: `${user.firstName} ${user.lastName}`,
-      products: ['auth'] as Products[],
+      products: ['auth', 'transactions'] as Products[],
       language: 'en',
       country_codes: ['US'] as CountryCode[]
     }
@@ -256,7 +256,7 @@ export const getBanks = async ({ userId }: getBanksProps) => {
   }
 }
 
-export const getBank = async ({ documentId }: getBanksProps) => {
+export const getBank = async ({ documentId }: getBankProps) => {
   try {
     const { database } = await createAdminClient()
 
@@ -265,6 +265,25 @@ export const getBank = async ({ documentId }: getBanksProps) => {
       BANK_COLLECTION_ID!,
       [Query.equal('$id', documentId)]
     )
+
+    return parseStringify(bank.documents[0])
+    
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const getBankByAccountId = async ({ accountId }: getBankByAccountIdProps) => {
+  try {
+    const { database } = await createAdminClient()
+
+    const bank = await database.listDocuments(
+      DATABASE_ID!,
+      BANK_COLLECTION_ID!,
+      [Query.equal('accountId', accountId)]
+    )
+
+    if (bank.total !== 1) return null
 
     return parseStringify(bank.documents[0])
     

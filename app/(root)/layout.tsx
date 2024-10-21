@@ -14,7 +14,7 @@ export default async function RootLayout({
   if (!loggedIn) redirect('/sign-in')
     
   return (
-    <main className="flex h-screen w-full font-arimo">
+    <main className="flex h-screen w-full font-rubik">
         <Sidebar user={loggedIn} />
         
         <div className="flex size-full flex-col">

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Arimo, Libre_Caslon_Text} from "next/font/google";
+import { Rubik, Libre_Caslon_Text} from "next/font/google";
 import "./globals.css";
 
-const arimo = Arimo({
+const rubik = Rubik({
   subsets: ["latin"], 
-  variable: '--font-arimo',
-  weight: ["400", "600"]
+  variable: '--font-rubik',
+  weight: ["400", "500"]
 });
 const libreCaslonText = Libre_Caslon_Text({
   subsets: ['latin'],
@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${arimo.variable} ${libreCaslonText.variable}`}>{children}</body>
+      <body className={`${rubik.variable} ${libreCaslonText.variable}`}>{children}</body>
     </html>
   );
 }
