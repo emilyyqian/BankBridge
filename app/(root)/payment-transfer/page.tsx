@@ -6,7 +6,7 @@ import React from 'react'
 
 const Transfer = async () => {
   const loggedIn = await getLoggedInUser()
-  const accounts = await getAccounts({ userId: loggedIn.$id })
+  const accounts = await getAccounts({ userId: loggedIn?.$id })
 
   if (!accounts) return
 
