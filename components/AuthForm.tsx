@@ -91,7 +91,7 @@ const AuthForm = ({ type }: { type: string }) => {
             height={34}
             alt="BankBridge logo"
           />
-          <h1 className="text-24 font-libre-caslon-text font-bold text-black-1">BankBridge</h1>
+          <h1 className="text-24 font-libre-caslon-text font-bold text-gray-900">BankBridge</h1>
         </Link>
 
         <div className="flex flex-col gap-1 md:gap-3">
